@@ -7,7 +7,7 @@ import BookingForm from "@/components/BookingForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import mechanicAli from "@/assets/mechanic-ali.jpg";
 import shopInterior from "@/assets/shop-interior.jpg";
-import { SiBmw, SiMercedes, SiAudi, SiVolkswagen, SiPorsche } from "react-icons/si";
+import { SiBmw, SiMercedesbenz, SiAudi, SiVolkswagen, SiPorsche } from "react-icons/si";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -91,7 +91,7 @@ const Index = () => {
             <p className="text-xs font-body font-medium text-primary tracking-[0.2em] uppercase mb-3">Specialists In:</p>
             <div className="flex items-center gap-6 text-dark-foreground/80 font-heading text-xl tracking-wider">
               <span className="flex items-center gap-2"><SiBmw /> BMW</span>
-              <span className="flex items-center gap-2"><SiMercedes /> Mercedes-Benz</span>
+              <span className="flex items-center gap-2"><SiMercedesbenz /> Mercedes-Benz</span>
               <span className="flex items-center gap-2"><SiAudi /> Audi</span>
               <span className="flex items-center gap-2"><SiVolkswagen /> VW</span>
               <span className="flex items-center gap-2"><SiPorsche /> Porsche</span>
