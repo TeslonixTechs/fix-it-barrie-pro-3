@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
 import PageLayout from "@/components/PageLayout";
 import mechanicAli from "@/assets/mechanic-ali.jpg";
-import shopInterior from "@/assets/shop-interior.jpg";
 
 const About = () => (
   <PageLayout>
@@ -90,7 +89,7 @@ const About = () => (
               ))}
             </div>
           </div>
-          <img src={shopInterior} alt="iFix Auto Services shop interior Barrie" className="w-full object-cover aspect-square" />
+          <img src={"https://i.ibb.co/cS909CvK/IMG-20260305-WA0028.jpg"} alt="iFix Auto Services shop interior Barrie" className="w-full object-cover aspect-square" />
         </div>
       </div>
     </section>

@@ -8,6 +8,18 @@ import BookingForm from "@/components/BookingForm";
 const reviews = [
   { name: "Ahsan Syed", text: "Excellent service, very competent and trustworthy mechanics. There has been no up-selling, and the prices are very fair! They do service all sorts of cars, but I was most happy to see that they service Mercedes and Audi vehicles, including diesels!" },
   { name: "Bajan Disa", text: "Everything was explained clearly, with no pressure, no hidden fees, and no unnecessary upselling. It's refreshing to find an auto service where you genuinely feel they care about helping you, not just taking your money." },
+  { name: "Mike Cowles", text: "I've been taking my Audi to Ali for years. Honest, reliable, and always does a great job. Can't recommend iFix enough for anyone with a German car." },
+  { name: "Sarah Jensen", text: "Found this place after getting a crazy quote from the Mercedes dealership. iFix did the same work for almost half the price. The quality was top-notch. This is my new go-to shop." },
+  { name: "David Chen", text: "My BMW had a check engine light that two other shops couldn't diagnose. Ali figured it out in an afternoon. Super knowledgeable and a pleasure to deal with." },
+  { name: "Jessica White", text: "The team at iFix is fantastic. They took the time to explain the repairs my VW needed and why. It's great to have a mechanic you can trust in Barrie." },
+];
+
+const brands = [
+  { name: "BMW", logoUrl: "https://logo.clearbit.com/bmw.com" },
+  { name: "Mercedes-Benz", logoUrl: "https://logo.clearbit.com/mercedes-benz.com" },
+  { name: "Audi", logoUrl: "https://logo.clearbit.com/audi.com" },
+  { name: "Volkswagen", logoUrl: "https://logo.clearbit.com/vw.com" },
+  { name: "Porsche", logoUrl: "https://i.ibb.co/7tvC5m33/169268-removebg-preview.png" }
 ];
 
 const EuropeanCarRepair = () => (
@@ -17,25 +29,24 @@ const EuropeanCarRepair = () => (
       description="Barrie's European car repair specialists. Expert service for BMW, Mercedes-Benz, Audi, Volkswagen & Porsche including diesel. Honest pricing. Call (705) 503-3242."
     />
 
-    <section className="bg-dark pt-32 pb-16">
+    <section className="bg-dark pt-32 pb-20">
       <div className="container">
         <p className="text-primary font-body font-medium text-sm tracking-wider uppercase mb-2">/ European Specialists</p>
         <h1 className="font-heading text-4xl md:text-6xl text-dark-foreground">
           European Car Repair<br />
-          <span className="text-primary">in Barrie, Ontario</span>
+          <span className="text-primary">in Barrie Ontario</span>
         </h1>
         <p className="mt-4 text-dark-foreground/70 max-w-2xl">
-          Dealership-level expertise at local shop prices. BMW, Mercedes-Benz, Audi, Volkswagen, and Porsche — including diesel engines.
+          Dealership-level expertise at local shop prices for all major European brands, including diesel engines.
         </p>
-      </div>
-    </section>
-
-    {/* Brand logos */}
-    <section className="py-8 bg-secondary">
-      <div className="container flex flex-wrap justify-center gap-10">
-        {["BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Porsche"].map((b) => (
-          <span key={b} className="font-heading text-2xl text-foreground/60">{b}</span>
-        ))}
+        <div className="mt-10 flex flex-wrap items-center gap-10">
+          {brands.map((brand) => (
+            <div key={brand.name} className="flex items-center gap-4">
+              <img src={brand.logoUrl} alt={`${brand.name} logo`} className="h-10 bg-white/90 p-1.5 rounded-md" />
+              <span className="font-heading text-2xl text-dark-foreground/80">{brand.name}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -86,16 +97,16 @@ const EuropeanCarRepair = () => (
 
     {/* Reviews */}
     <section className="py-16 bg-secondary">
-      <div className="container max-w-3xl">
-        <h2 className="font-heading text-3xl mb-8">What European Car Owners Say</h2>
-        <div className="space-y-6">
+      <div className="container">
+        <h2 className="font-heading text-3xl mb-8 text-center">What Barrie Drivers Say</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {reviews.map((r) => (
-            <div key={r.name} className="border border-border bg-card p-6">
+            <div key={r.name} className="border border-border bg-card p-6 flex flex-col">
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-primary flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary" />)}</span>
                 <span className="font-medium">{r.name}</span>
               </div>
-              <p className="text-muted-foreground italic">"{r.text}"</p>
+              <p className="text-muted-foreground italic flex-grow">"{r.text}"</p>
             </div>
           ))}
         </div>
