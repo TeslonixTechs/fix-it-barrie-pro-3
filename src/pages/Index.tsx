@@ -7,7 +7,7 @@ import BookingForm from "@/components/BookingForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import mechanicAli from "@/assets/mechanic-ali.jpg";
 import shopInterior from "@/assets/shop-interior.jpg";
-import { SiBmw, SiMercedesBenz, SiAudi, SiVolkswagen, SiPorsche } from "react-icons/si";
+import { SiBmw, SiBrandmercedes, SiAudi, SiVolkswagen, SiPorsche } from "react-icons/si";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -91,7 +91,7 @@ const Index = () => {
             <p className="text-xs font-body font-medium text-primary tracking-[0.2em] uppercase mb-3">Specialists In:</p>
             <div className="flex items-center gap-6 text-dark-foreground/80 font-heading text-xl tracking-wider">
               <span className="flex items-center gap-2"><SiBmw /> BMW</span>
-              <span className="flex items-center gap-2"><SiMercedesBenz /> Mercedes-Benz</span>
+              <span className="flex items-center gap-2"><SiBrandmercedes /> Mercedes-Benz</span>
               <span className="flex items-center gap-2"><SiAudi /> Audi</span>
               <span className="flex items-center gap-2"><SiVolkswagen /> VW</span>
               <span className="flex items-center gap-2"><SiPorsche /> Porsche</span>
@@ -138,7 +138,12 @@ const Index = () => {
       {/* SECTION 2 — TRUST BAR */}
       <section className="bg-primary py-4">
         <div className="container flex flex-wrap justify-center gap-x-8 gap-y-2 text-primary-foreground text-sm font-body font-medium">
-          {["4.9 Stars — 132 Google Reviews", "No Upselling — Ever", "Same-Day Service Available", "All Work Guaranteed"].map((t) => (
+          {[
+            "4.9 Stars — 132 Google Reviews",
+            "No Upselling — Ever",
+            "Same-Day Service Available",
+            "All Work Guaranteed",
+          ].map((t) => (
             <span key={t} className="flex items-center gap-2">
               <Shield className="w-4 h-4" /> {t}
             </span>
@@ -151,7 +156,11 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative">
-              <img src={mechanicAli} alt="Ali - owner and mechanic at iFix Auto Services Barrie" className="w-full object-cover aspect-[4/5]" />
+              <img
+                src={mechanicAli}
+                alt="Ali - owner and mechanic at iFix Auto Services Barrie"
+                className="w-full object-cover aspect-[4/5]"
+              />
               <div className="absolute -bottom-4 -right-4 bg-primary w-24 h-24 flex flex-col items-center justify-center text-primary-foreground">
                 <span className="font-heading text-2xl">15+</span>
                 <span className="text-[0.6rem] uppercase tracking-wider">Years</span>
@@ -161,7 +170,11 @@ const Index = () => {
               <p className="text-primary font-body font-medium text-sm tracking-wider uppercase mb-2">/ Who We Are</p>
               <h2 className="font-heading text-4xl md:text-5xl mb-6">Meet Ali — Barrie's Most Trusted Mechanic</h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                For over 15 years, Ali and his team at iFix Auto Services have been the go-to shop for Barrie drivers who want honest, expert repairs without the dealership prices. Specializing in European and German vehicles — BMW, Mercedes, Audi, and Volkswagen including diesel engines — Ali brings the knowledge of a dealership technician with the pricing and personal service of a local shop. No upselling. No surprises. Just reliable work done right the first time.
+                For over 15 years, Ali and his team at iFix Auto Services have been the go-to shop for Barrie drivers
+                who want honest, expert repairs without the dealership prices. Specializing in European and German
+                vehicles — BMW, Mercedes, Audi, and Volkswagen including diesel engines — Ali brings the knowledge of a
+                dealership technician with the pricing and personal service of a local shop. No upselling. No surprises.
+                Just reliable work done right the first time.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 {[
@@ -176,7 +189,9 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <Link to="/about" className="text-primary font-medium text-sm hover:underline">Learn More About Us →</Link>
+              <Link to="/about" className="text-primary font-medium text-sm hover:underline">
+                Learn More About Us →
+              </Link>
             </div>
           </div>
         </div>
@@ -193,12 +208,17 @@ const Index = () => {
             {services.map((s) => {
               const Icon = s.icon;
               return (
-                <div key={s.num} className="relative border border-border p-6 group hover:border-primary/40 transition-colors overflow-hidden">
+                <div
+                  key={s.num}
+                  className="relative border border-border p-6 group hover:border-primary/40 transition-colors overflow-hidden"
+                >
                   <span className="section-number top-2 right-4">{s.num}</span>
                   <Icon className="w-8 h-8 text-primary mb-4 relative z-10" />
                   <h3 className="font-heading text-xl mb-2 relative z-10">{s.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4 relative z-10">{s.desc}</p>
-                  <Link to={s.href} className="text-primary text-sm font-medium hover:underline relative z-10">Learn More →</Link>
+                  <Link to={s.href} className="text-primary text-sm font-medium hover:underline relative z-10">
+                    Learn More →
+                  </Link>
                 </div>
               );
             })}
@@ -207,7 +227,8 @@ const Index = () => {
           {/* European specialist card */}
           <div className="mt-12 bg-dark p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-l-4 border-primary">
             <p className="text-dark-foreground font-body text-lg">
-              <span className="font-medium">European & German Car Specialists</span> — BMW, Mercedes-Benz, Audi, Volkswagen & Porsche, including diesel engines. Trusted by Barrie drivers for over 15 years.
+              <span className="font-medium">European & German Car Specialists</span> — BMW, Mercedes-Benz, Audi,
+              Volkswagen & Porsche, including diesel engines. Trusted by Barrie drivers for over 15 years.
             </p>
             <Button variant="cta" size="lg" asChild className="shrink-0">
               <Link to="/european-car-repair-barrie">Book European Car Service →</Link>
@@ -219,11 +240,18 @@ const Index = () => {
       {/* SECTION 5 — CAR BRANDS */}
       <section className="py-16 bg-secondary">
         <div className="container text-center">
-          <p className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground mb-8">We Service All Makes & Models</p>
+          <p className="font-body text-sm tracking-[0.2em] uppercase text-muted-foreground mb-8">
+            We Service All Makes & Models
+          </p>
           <div className="overflow-hidden">
             <div className="flex animate-scroll-left whitespace-nowrap">
               {[...carBrands, ...carBrands].map((b, i) => (
-                <span key={i} className="mx-10 font-heading text-2xl text-muted-foreground/40 hover:text-foreground transition-colors cursor-default">{b}</span>
+                <span
+                  key={i}
+                  className="mx-10 font-heading text-2xl text-muted-foreground/40 hover:text-foreground transition-colors cursor-default"
+                >
+                  {b}
+                </span>
               ))}
             </div>
           </div>
@@ -254,7 +282,11 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <img src={shopInterior} alt="iFix Auto Services shop interior in Barrie Ontario" className="w-full object-cover aspect-square" />
+            <img
+              src={shopInterior}
+              alt="iFix Auto Services shop interior in Barrie Ontario"
+              className="w-full object-cover aspect-square"
+            />
           </div>
         </div>
       </section>
@@ -262,7 +294,9 @@ const Index = () => {
       {/* SECTION 7 — HOW IT WORKS */}
       <section className="py-20 bg-primary">
         <div className="container text-center">
-          <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-12">Getting Your Car Fixed is Simple</h2>
+          <h2 className="font-heading text-4xl md:text-5xl text-primary-foreground mb-12">
+            Getting Your Car Fixed is Simple
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { num: "01", title: "Call or Book Online", desc: "Tell us your issue or book through the form" },
@@ -283,7 +317,9 @@ const Index = () => {
       <section id="reviews" className="py-20">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="text-primary font-body font-medium text-sm tracking-wider uppercase mb-2">/ What Barrie Drivers Say</p>
+            <p className="text-primary font-body font-medium text-sm tracking-wider uppercase mb-2">
+              / What Barrie Drivers Say
+            </p>
             <h2 className="font-heading text-4xl md:text-5xl">4.9 Stars Across 132 Google Reviews</h2>
             <p className="text-muted-foreground mt-2">Real reviews from real Barrie customers</p>
           </div>
@@ -294,7 +330,9 @@ const Index = () => {
                   <span className="font-medium">{r.name}</span>
                 </div>
                 <div className="flex gap-0.5 text-primary mb-3">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-primary" />)}
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary" />
+                  ))}
                 </div>
                 <p className="text-sm text-muted-foreground italic leading-relaxed">"{r.text}"</p>
                 <p className="text-xs text-muted-foreground/60 mt-3">{r.time}</p>
@@ -303,7 +341,11 @@ const Index = () => {
           </div>
           <div className="text-center mt-8">
             <Button variant="ctaOutline" size="lg" asChild>
-              <a href="https://www.google.com/maps/place/iFix+Auto+Services" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.google.com/maps/place/iFix+Auto+Services"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 See All 132 Reviews on Google →
               </a>
             </Button>
@@ -319,7 +361,11 @@ const Index = () => {
               <p className="text-primary font-body font-medium text-sm tracking-wider uppercase mb-2">/ Book Your Visit</p>
               <h2 className="font-heading text-4xl md:text-5xl mb-6">Book an Appointment</h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Call or text Ali directly at <a href="tel:7055033242" className="text-primary font-medium">(705) 503-3242</a>, or fill out the form and we'll confirm within a few hours.
+                Call or text Ali directly at{" "}
+                <a href="tel:7055033242" className="text-primary font-medium">
+                  (705) 503-3242
+                </a>
+                , or fill out the form and we'll confirm within a few hours.
               </p>
               <div className="space-y-4 text-sm text-muted-foreground">
                 <div className="flex items-start gap-3">
@@ -343,7 +389,13 @@ const Index = () => {
         <div className="container max-w-3xl">
           <h2 className="font-heading text-2xl mb-4">Serving Barrie and Simcoe County</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            iFix Auto Services is Barrie's top-rated auto repair shop, proudly serving drivers across Barrie, Innisfil, Alliston, Midhurst, Orillia and all of Simcoe County. Whether you need an oil change in Barrie, European car repair, a safety certificate, brake service, or a full engine diagnostic — Ali and his team are here to help. We specialize in BMW repair in Barrie, Mercedes repair, Audi service, and Volkswagen maintenance, with the expertise to handle all European and German vehicles including diesels. Trusted by over 132 satisfied customers with a 4.9-star Google rating, iFix Auto Services is the honest, reliable choice for auto repair in Barrie, Ontario.
+            iFix Auto Services is Barrie's top-rated auto repair shop, proudly serving drivers across Barrie, Innisfil,
+            Alliston, Midhurst, Orillia and all of Simcoe County. Whether you need an oil change in Barrie, European car
+            repair, a safety certificate, brake service, or a full engine diagnostic — Ali and his team are here to
+            help. We specialize in BMW repair in Barrie, Mercedes repair, Audi service, and Volkswagen maintenance, with
+            the expertise to handle all European and German vehicles including diesels. Trusted by over 132 satisfied
+            customers with a 4.9-star Google rating, iFix Auto Services is the honest, reliable choice for auto repair
+            in Barrie, Ontario.
           </p>
         </div>
       </section>
